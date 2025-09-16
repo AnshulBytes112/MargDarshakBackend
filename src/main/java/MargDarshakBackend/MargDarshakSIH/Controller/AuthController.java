@@ -34,7 +34,7 @@ public class AuthController {
     @Autowired
     private JwtUtils jwtUtil;
 
-    @PostMapping("/signup")
+    @PostMapping("/auth/register")
     private ResponseEntity<?> signup(@RequestBody RegisterRequest request) {
         try {
             // ✅ Check if email already exists
