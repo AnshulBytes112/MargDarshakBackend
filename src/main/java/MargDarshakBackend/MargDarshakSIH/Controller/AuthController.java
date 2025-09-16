@@ -106,6 +106,21 @@ public class AuthController {
         }
     }
 
+    @DeleteMapping("/user/delete")
+    public ResponseEntity<Map<String, String>> deleteUser(Authentication authentication) {
+        String email = authentication.getName();
+        User user = userRepository.findByEmail(email);
+        if (user == null) {
+            throw new RuntimeException("User not found");
+        }
+        userRepository.deleteById(user.getId());
+
+        Map<String, String> response = new HashMap<>();
+        response.put("status", "success");
+        response.put("message", "Account deleted successfully");
+
+        return ResponseEntity.ok(response);
+    }
 
 
 }
