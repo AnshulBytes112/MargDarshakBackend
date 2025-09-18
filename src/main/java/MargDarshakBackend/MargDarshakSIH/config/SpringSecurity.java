@@ -43,9 +43,12 @@ public class SpringSecurity {
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
                 .authorizeHttpRequests(auth -> auth
+
                         .requestMatchers("/api/auth/**").permitAll() // Allow auth endpoints
-                        .requestMatchers("/uploads/**").permitAll() // Serve uploaded files
-                        .requestMatchers("/api/**").authenticated()
+                        .requestMatchers("/uploads/**").permitAll() // Serve uploaded fil
+                        .requestMatchers("/api/**","/api/public").permitAll()
+                        .requestMatchers("/trip/socket/**").permitAll() // WebSocket endpoint
+
                         .requestMatchers("/api/favorites/**", "/api/bookings/**", "/api/rooms/*").authenticated()
                         .requestMatchers("/admin/**").hasRole("ADMIN") // Admin endpoints
                         .anyRequest().authenticated() // All other endpoints require authentication
