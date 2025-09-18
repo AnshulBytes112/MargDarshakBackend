@@ -1,0 +1,6 @@
+tripId,vehicleNumber,startTime,endTime,origin,destination,route
+101,KA01AB1234,2025-09-18T08:00:00,2025-09-18T10:00:00,Bangalore,Mysore,Bangalore→Ramanagara→Mandya→Mysore
+102,KA01AB5678,2025-09-18T09:00:00,2025-09-18T11:30:00,Bangalore,Chennai,Bangalore→Krishnagiri→Vellore→Chennai
+103,KA02XY9999,2025-09-18T07:30:00,2025-09-18T09:15:00,Delhi,Gurgaon,Delhi→Mahipalpur→IFFCO Chowk→Gurgaon
+104,KA03CD1111,2025-09-18T06:45:00,2025-09-18T09:45:00,Pune,Mumbai,Pune→Lonavala→Panvel→Mumbai
+105,KA04EF2222,2025-09-18T10:15:00,2025-09-18T13:15:00,Hyderabad,Vijayawada,Hyderabad→Nalgonda→Guntur→Vijayawada

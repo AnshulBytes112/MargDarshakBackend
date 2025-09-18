@@ -1,5 +1,6 @@
 package MargDarshakBackend.MargDarshakSIH.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,9 +16,50 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
+    public String getId() {
+        return id;
+    }
+
     @Id
     private String  id;
     private String name;
+
+
+
+
+
+
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public @NonNull String getEmail() {
+        return email;
+    }
+
+    public void setEmail(@NonNull String email) {
+        this.email = email;
+    }
+
+
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+
+
+
     @Indexed(unique = true)
     @NonNull
     private String email;

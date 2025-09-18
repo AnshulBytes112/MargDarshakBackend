@@ -44,7 +44,8 @@ public class SpringSecurity {
                 )
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/**").permitAll() // Allow login, register, etc.
-                        .requestMatchers("/api/**","/api/public").permitAll() // Public room listings (optional)
+                        .requestMatchers("/api/**","/api/public").permitAll()
+                        .requestMatchers("/trip/socket/**").permitAll() // WebSocket endpoint
                         .requestMatchers("/api/favorites/**", "/api/bookings/**", "/api/rooms/*").authenticated()
                         .requestMatchers("/admin/**").hasRole("ADMIN") // Admin endpoints
                         .anyRequest().authenticated() // All other endpoints require authentication
